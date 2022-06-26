@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Derivative Calculator | Calculates Any Derivative</title>
+        
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+        <script src="deriv.py"></script>
+
+    </head>
+    <body>
+        <header>
+        <a href="#" class="logo">@vivekbruh</a>
+        <nav class="navbar">
+                <ul>
+                    <li><a href="/home" >Home</a>
+                    </li>
+
+                    <li><a href="#" class ="active">Calc I</a>
+                        <ul>
+                            <li><a href="/derivatives">Derivatives</a></li>
+                            <li><a href="/integral">Integrals</a></li>
+                            <li><a href="/limits">Limits</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Calc II</a>
+                        <ul>
+                            <li><a href="/seriesexpansion">Series Expansion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </nav>
+        </header>
+        <section>
+            <img src="{{ url_for('static', filename='stars.png') }}" id="stars">
+            <img src="{{ url_for('static', filename='moon.png') }}" id="moon">
+            <img src="{{ url_for('static', filename='mountains_behind1.png') }}" id="mountains_behind1">
+            <h2 id="text">Derivative Calculator</h2>
+            <a href="#sec" class = "active" id="btn">Derivate</a>
+            <img src="{{ url_for('static', filename='mountains_front1.png') }}" id="mountains_front1">
+            
+        </section>
+        <div class ="sec" id="sec">
+            <h2>Derivative Calculator</h2>
+            
+            <form class = "grid" action = "/result" method = "POST">
+                
+                <center>
+                    
+                    {% if expression %}
+                    <a href="#sec"></a>
+                    <h3 style="color: rgb(31, 236, 192)">Your Expression:</h3>
+                    <p>
+                        \({{original}}\)
+                    </p>
+                    <h3 style="color: rgb(23, 150, 167)">Derivative:</h3>
+                    <p>
+                        \({{expression}}\)
+                    </p>
+                        {% if result %}
+                        <h3 style="color: rgb(53, 71, 226)">Result:</h3>
+                        <p>
+                            \({{result}}\)
+                        </p>
+                        {% endif %}
+                    {% endif %}
+                </center>
+                <label style="color:aliceblue" ="Derivate" class = "enterLabel">Enter Expression:</label>
+                <input type="text" name="expression" id = "expression">
+                <br>
+                <label style="color:aliceblue" ="evaluate" class = "enterLabel">Evaluate At:</label>
+                <input type="text" name="evaluate" id = "evaluate">
+                <br>
+                <div class = "checkbox-container">
+                    <input type="checkbox" value = "1" id="cb1" name = "cb1">
+                    <label style="color:aliceblue" ="cb1">Implicit Differentiation</label>
+                </div>
+                <center><input type = "Submit" class = "file_submit"></center>
+                
+                
+            </form>
+        </div>
+
+        <script>
+
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind1 = document.getElementById('mountains_behind1');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front1 = document.getElementById('mountains_front1');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind1.style.top = value * 0.5 + 'px';
+                mountains_front1.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                btn.style.marginTop = value * 0.6 + 'px';
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CalcFix Calculator</title>
+        
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+        
+    </head>
+
+      
+    <body>
+        <script type="importmap">
+            {
+            "imports": {
+             "three": "https://cdn.skypack.dev/three@0.139.2/build/three.module",
+                "three/": "https://cdn.skypack.dev/three@0.139.2/",      
+                "dat.gui": "https://cdn.skypack.dev/dat.gui"
+            }
+           }
+          </script>
+          <script type = "module" src = "{{ url_for('static', filename='./main.js') }}"></script>
+        <canvas id="bg"></canvas>
+        <header>
+        <a href="#" class="logo">@vivekbruh</a>
+        <nav class="navbar">
+                <ul>
+                    <li><a href="/home" class="active">Home</a>
+                    </li>
+
+                    <li><a href="#">Calc I</a>
+                        <ul>
+                            
+                            <li><a href="/derivatives">Derivatives</a></li>
+                            <li><a href="/integral">Integrals</a></li>
+                            <li><a href="/limits">Limits</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="#">Calc II</a>
+                        <ul>
+                            <li><a href="/seriesexpansion">Series Expansion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </nav>
+        </header>
+        
+        <section>
+            <h2 id="text">CalcFix Calculator</h2>
+            <a href="#sec" class = "active" id="btn">Learn More</a>
+            
+        </section>
+        <div class ="sec" id="sec">
+            <h2>About</h2>
+            <br>
+            <div class="aboutsection" id="aboutsection">  
+                <img src="{{ url_for('static', filename='Calcfix.png') }}" id="calclogo" position: absolute>
+                <p class="abouttext">
+                    Hello everyone. My name is Vivek Narayana and I created CalcFix Calculator. This online calculator is currently capable
+                    of solving things like derivatives, limits, and integrals. There is also an experimental series expansion tab. It still works, 
+                    but it's just unable to put the expansion into the form of an infinite series. This calculator is capable of doing all the basics from 
+                    Calc I and II. The integrals tab is placed under the Calc I section, but it's still able to do integration by parts, partial fraction integration,
+                    trigonometric integration, and integration by trigonometric substition. It also supports improper integrals, and can state whether the integral 
+                    converges or not.
+                </p>
+            </div> 
+        </div>
+        
+        
+
+
+        
+    </body>
+</html>

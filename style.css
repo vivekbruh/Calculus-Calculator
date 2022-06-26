@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(#2134a5, #252a72);
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+header .logo
+{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+
+section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .navbar ul
+{
+    list-style: none;
+}
+
+header .navbar ul li
+{
+    position: relative;
+    float: left;
+
+}
+header .navbar ul li a
+{
+    text-decoration: none;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 20px;
+    display: block;
+}
+
+header .navbar ul li a:hover,
+header .navbar ul li a.active
+{
+    background: #fff;
+    color: #2134a5;
+}
+
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 100px;
+    display: none;
+}
+
+header .navbar ul li:focus-within > ul,
+header .navbar ul li:hover > ul{
+    display: initial;
+}
+
+section:before 
+{
+
+    content: ''; /*allows for transparency */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#252a72, transparent);
+    z-index: 1000;
+}
+
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon
+{
+    mix-blend-mode: screen;
+}
+
+section img#mountains_front1
+{
+    z-index: 10;
+}
+
+#text
+{
+    position: absolute;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 6.25vw;
+    z-index: 9;
+}
+#btn
+{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2134a5;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+}
+
+
+
+.file_submit{
+    padding: 0.5rem;
+border-radius: 10%;
+width: 150px;
+height: 75px;
+border: none;
+color: white;
+background-color: #2134a5;
+box-shadow: inset 0 0 0 0 #252a72;
+transition: ease-out 0.3s;
+font-size: 1.5rem;
+outline: none;
+
+}
+.file_submit:hover {
+    box-shadow: inset 150px 0 0 0 #18b4b4;
+}
+
+.enterLabel{
+    box-shadow: inset 0 0 0 0 #252a72;
+    transition: ease-out 0.3s;
+    outline: none;
+}
+
+.enterLabel:hover {
+    box-shadow: inset 150px 0 0 0 #aa7cc5;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.checkbox-container label {
+    cursor: pointer;
+    display: flex;
+}
+
+.checkbox-container input[type='checkbox'] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-container label::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    border-radius: .15em;
+    margin-right: 0.5em;
+    border: .05em solid black;
+}
+
+.checkbox-container label:hover::before, 
+.checkbox-container input[type='checkbox']:hover + label::before{
+    background-color: aquamarine;
+
+}
+
+.checkbox-container input[type='checkbox']:checked + label::before {
+    
+    background-color: #18b4b4;
+}
+
+
+.sec
+{
+    position: relative;
+    
+    padding: 100px;
+    background-color: #252a72;
+}
+
+.sec h2
+{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+
+}
+
+.sec p
+{
+    font-size: 1.2em;
+    color: #fff;
+}
+
+
+.abouttext
+{
+    width: 600px;
+}
+
+.aboutsection
+{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
